@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar/Navbar";
 import { Outlet } from "react-router-dom";
 
 const RootLayout = () => {
   return (
     <div>
       <Navbar />
-      <main>{<Outlet />}</main>
+      <main className="p-5 md:px-10 lg:px-14 xl:px-20">{<Outlet />}</main>
     </div>
   );
 };
