@@ -1,27 +1,23 @@
-import React, { useState } from "react";
-import { GoSearch } from "react-icons/go";
+import React from "react";
+import { GoSearch } from '../../Icons/Icons'
 import { NavLink } from "react-router-dom";
-import {SearchBarDiv,AppLogo} from "../../routes";
+import { AppLogo, SearchBarDiv, useAppContext } from "../../routes";
 
 const MobileNav = () => {
-  const [showSearchDiv, setShowSearchDiv] = useState(false);
-
-  const toggleSetShowSearchDiv = () => {
-    setShowSearchDiv(!showSearchDiv);
-    console.log(showSearchDiv);
-  };
+  const { toggleSearchBarDiv,showSearchDiv } = useAppContext();
+  console.log(toggleSearchBarDiv)
   return (
     <>
       {showSearchDiv ? (
-        <SearchBarDiv toggleSetShowSearchDiv={toggleSetShowSearchDiv} />
+        <SearchBarDiv />
       ) : (
-        <nav className="flex justify-between items-center px-8 py-2">
+        <nav className="flex justify-between items-center px-2 py-2">
           <AppLogo />
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 px-2">
             <span
               className="p-2 hover:bg-neutral-600 rounded-full cursor-pointer"
-              onKeyDown={toggleSetShowSearchDiv}
-              onClick={toggleSetShowSearchDiv}
+              onKeyDown={toggleSearchBarDiv}
+              onClick={toggleSearchBarDiv}
             >
               <GoSearch className="text-xl" />
             </span>
