@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import AppLogo from "../AppLogo";
-import SearchBar from "./SearchBar";
+import {SearchBar,AppLogo} from '../../routes'
 
 const DesktopNav = () => {
   return (

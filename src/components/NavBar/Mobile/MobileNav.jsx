@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import AppLogo from "../AppLogo";
-import SearchBarDiv from "./SearchBarDiv";
+import {SearchBarDiv,AppLogo} from "../../routes";
 
 const MobileNav = () => {
   const [showSearchDiv, setShowSearchDiv] = useState(false);
@@ -16,7 +15,7 @@ const MobileNav = () => {
       {showSearchDiv ? (
         <SearchBarDiv toggleSetShowSearchDiv={toggleSetShowSearchDiv} />
       ) : (
-        <nav className="flex justify-between items-center px-8 py-2 border-b">
+        <nav className="flex justify-between items-center px-8 py-2">
           <AppLogo />
           <div className="flex items-center gap-3">
             <span

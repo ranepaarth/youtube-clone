@@ -4,7 +4,7 @@ import { GoSearch } from "react-icons/go";
 import { IoArrowBackOutline } from "react-icons/io5";
 export const SearchBarDiv = ({ toggleSetShowSearchDiv }) => {
   return (
-    <div className="flex items-center justify-evenly py-2 border-b">
+    <div className="flex items-center justify-evenly py-2">
       <span
         className="text-xl hover:bg-neutral-600 p-2 rounded-full cursor-pointer"
         onClick={toggleSetShowSearchDiv}

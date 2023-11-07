@@ -1,5 +1,4 @@
-import DesktopNav from "./Desktop/DesktopNav";
-import MobileNav from "./Mobile/MobileNav";
+import { DesktopNav,MobileNav } from "../routes";
 
 const Navbar = () => {
   return (
