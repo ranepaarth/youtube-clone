@@ -10,7 +10,7 @@ const AppLogo = () => {
     <img src={Logo} alt="logo" />
     <span className='text-xl font-bold tracking-tight md:block md:visible'
     >
-      YouTube
+      TechieTube
     </span>
   </Link>
   )
