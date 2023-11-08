@@ -4,7 +4,7 @@ import {SearchBar,AppLogo} from '../../routes'
 
 const DesktopNav = () => {
   return (
-    <nav className="flex items-center justify-between px-5 py-2 bg-neutral-900">
+    <nav className="flex items-center justify-between px-5 py-2">
       <AppLogo />
       <NavLink to="search/:searchTerm">
         <SearchBar />
