@@ -7,10 +7,10 @@ const RootLayout = () => {
   return (
     <div>
       <Navbar />
-      <div className={open?"block":"hidden"}>
+      <div>
         <SideBarContainer/>
       </div>
-      <main className="p-5 md:px-10 lg:px-14 xl:px-20">{<Outlet />}</main>
+      <main>{<Outlet />}</main>
     </div>
   );
 };
