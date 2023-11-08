@@ -8,7 +8,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #101010;
+  background-color: #0a0a0a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,9 +21,9 @@ a {
   color: #f0f0f5;
   text-decoration: inherit;
 }
-a:hover {
+/* a:hover {
   color: #c1c1c3;
-}
+} */
 
 body {
   margin: 0;
