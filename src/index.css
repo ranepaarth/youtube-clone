@@ -68,3 +68,26 @@ button:focus-visible {
   height: 200px;
 }
 
+.tabs-box{
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.tabs-box::-webkit-scrollbar{
+  display: none;
+}
+
+
+/* .tabs-box .tab{
+  color: #ffffff;
+  background: #323232 ;
+  white-space: nowrap;
+  border: 1px solid #131313;
+  transition: all 0.3s ease;
+} */
+
+/* .tabs-box .tab:hover{
+  background: #545454;
+} */
