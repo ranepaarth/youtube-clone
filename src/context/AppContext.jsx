@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { fetchData } from "../utils/api";
 
 const AppContext = createContext();
 
@@ -6,15 +7,44 @@ const AppProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [showSearchDiv, setShowSearchDiv] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+  const [searchResults, setSearchResults] = useState(false);
+  const [selectCategories, setSelectCategories] = useState("");
+
   const toggleOpenSidebar = () => {
     setOpen(!open);
   };
 
   const toggleSearchBarDiv = () => {
-    setShowSearchDiv(!showSearchDiv)
+    setShowSearchDiv(!showSearchDiv);
+  };
+
+  useEffect(() => {
+    fetchSelectedCategoryData(selectCategories);
+  },[selectCategories]);
+
+  const fetchSelectedCategoryData = (query) => {
+    setLoading(true);
+    // fetchData(`search/?q=${query}`).then(({contents}) => {
+    //   console.log(contents);
+    //   setSearchResults(contents)
+    // });
+    setLoading(false);
   };
   return (
-    <AppContext.Provider value={{ open, toggleOpenSidebar ,toggleSearchBarDiv,showSearchDiv}}>
+    <AppContext.Provider
+      value={{
+        open,
+        toggleOpenSidebar,
+        toggleSearchBarDiv,
+        showSearchDiv,
+        loading,
+        setLoading,
+        searchResults,
+        setSelectCategories,
+        selectCategories,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
