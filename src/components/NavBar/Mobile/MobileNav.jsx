@@ -1,7 +1,7 @@
 import React from "react";
 import { GoSearch } from '../../Icons/Icons'
 import { NavLink } from "react-router-dom";
-import { AppLogo, SearchBarDiv, useAppContext } from "../../routes";
+import { AppLogo, SearchBar, useAppContext } from "../../routes";
 
 const MobileNav = () => {
   const { toggleSearchBarDiv,showSearchDiv } = useAppContext();
@@ -9,7 +9,7 @@ const MobileNav = () => {
   return (
     <>
       {showSearchDiv ? (
-        <SearchBarDiv />
+        <SearchBar />
       ) : (
         <nav className="flex justify-between items-center px-2 py-2">
           <AppLogo />
