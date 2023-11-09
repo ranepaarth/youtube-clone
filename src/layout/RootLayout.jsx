@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import { Navbar, SideBarContainer, useAppContext } from "../components/routes";
 
+import LoadingBar from "react-top-loading-bar";
+
 const RootLayout = () => {
-  const {open} = useAppContext()
+  const {open,progress,setProgress} = useAppContext()
   return (
     <div>
-      <Navbar />
+      <Navbar setProgress={setProgress}/>
+      <LoadingBar color="red" height='2px' progress={progress}/>
       <div>
         <SideBarContainer/>
       </div>
-      <main>{<Outlet />}</main>
+      <main>{<Outlet setProgress={setProgress}/>}</main>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [showSearchDiv, setShowSearchDiv] = useState(false);
-
+  const [progress,setProgress] = useState(0)
   const [loading, setLoading] = useState(false);
   const [searchResults, setSearchResults] = useState(false);
   const [selectCategories, setSelectCategories] = useState("");
@@ -38,11 +38,14 @@ const AppProvider = ({ children }) => {
         toggleOpenSidebar,
         toggleSearchBarDiv,
         showSearchDiv,
+        progress,
+        setProgress,
         loading,
         setLoading,
         searchResults,
         setSelectCategories,
         selectCategories,
+        fetchSelectedCategoryData
       }}
     >
       {children}
