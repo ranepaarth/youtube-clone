@@ -6,9 +6,9 @@ const DesktopNav = () => {
   return (
     <nav className="flex items-center justify-between px-5 py-2">
       <AppLogo />
-      <NavLink to="search/:searchTerm">
+      <span>
         <SearchBar />
-      </NavLink>
+      </span>
       <div className="flex items-center gap-x-8">
         <NavLink to="/">Feed</NavLink>
         <NavLink to="video/:id">Video</NavLink>
