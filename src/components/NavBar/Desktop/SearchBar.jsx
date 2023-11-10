@@ -5,15 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { BsFillMicFill } from "react-icons/bs";
 const SearchBar = () => {
-  const { toggleSearchBarDiv } = useAppContext();
+  const { toggleSearchBarDiv,fetchSelectedCategoryData } = useAppContext();
   let [searchQuery,setSearchQuery] = useState('')
   const navigate = useNavigate()
 
   const searchQueryHandler = (event) => {
     if((event?.key === 'Enter' || event === 'searchButton') && searchQuery.length > 0) {
+      fetchSelectedCategoryData(searchQuery)
       navigate(`/search/${searchQuery}`)
       toggleSearchBarDiv()
       setSearchQuery('')
+      console.log(event)
     }
   }
   return (
@@ -39,6 +41,7 @@ const SearchBar = () => {
         <button
           className="border border-neutral-600 rounded-r-full px-1 bg-neutral-600 w-16 flex items-center justify-center h-10 cursor-pointer"
           type="submit"
+          onClick={searchQueryHandler}
         >
           <GoSearch className="text-xl" />
         </button>
