@@ -11,7 +11,7 @@ const MobileNav = () => {
       {showSearchDiv ? (
         <SearchBar />
       ) : (
-        <nav className="flex w-full justify-between items-center px-2 py-2">
+        <nav className="flex w-full justify-between items-center px-2 ">
           <AppLogo />
           <div className="flex items-center gap-3 px-2 right-0">
             <span
