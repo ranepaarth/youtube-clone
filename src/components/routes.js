@@ -1,18 +1,20 @@
-export {default as RootLayout} from '../layout/RootLayout'
-export {default as Feed} from './Feed/Feed'
-export {default as ChannelDetail} from './Channel/ChannelDetail'
-export {default as VideoDetail} from './Video/VideoDetail'
-export {default as SearchFeed} from './Search/SearchFeed'
-export {default as SearchBar} from './NavBar/Desktop/SearchBar'
-export {default as SearchBarDiv} from './NavBar/Mobile/SearchBarDiv'
-export {default as AppLogo} from './NavBar/AppLogo'
-export {default as DesktopNav} from './NavBar/Desktop/DesktopNav'
-export {default as MobileNav} from './NavBar/Mobile/MobileNav'
-export {default as Navbar} from './NavBar/Navbar'
-export {default as Categories} from './NavBar/CategoryCarousel/Categories'
-export {default as SideBarContainer} from './SideBar/SideBarContainer'
-export {default as SideBarSection} from './SideBar/SidebarSection'
-export {useAppContext} from '../context/AppContext'
-export {default as SideBarNavigation} from './SideBar/SideBarNavigation'
-export {default as Hamburger} from '../components/NavBar/Hamburger'
-export {default as Logo} from "../assets/youtube-icon-svgrepo-com.svg"
+export { default as RootLayout } from "../layout/RootLayout";
+export { default as ChannelDetail } from "./Channel/ChannelDetail";
+export { default as Feed } from "./Feed/Feed";
+export { default as SearchBar } from "./NavBar/Desktop/SearchBar";
+export { default as SearchFeed } from "./Search/SearchFeed";
+export { default as VideoDetail } from "./Video/VideoDetail";
+
+export { default as Logo } from "../assets/youtube-icon-svgrepo-com.svg";
+export { default as Hamburger } from "../components/NavBar/Hamburger";
+export { useAppContext } from "../context/AppContext";
+export { default as AppLogo } from "./NavBar/AppLogo";
+export { default as Categories } from "./NavBar/CategoryCarousel/Categories";
+export { default as DesktopNav } from "./NavBar/Desktop/DesktopNav";
+export { default as MobileNav } from "./NavBar/Mobile/MobileNav";
+export { default as Navbar } from "./NavBar/Navbar";
+export { default as TabViewFixedSideBar } from "./SideBar/FixedSideBar";
+export { default as SideBarContainer } from "./SideBar/SideBarContainer";
+export { default as SideBarNavigation } from "./SideBar/SideBarNavigation";
+export { default as SideBarSection } from "./SideBar/SidebarSection";
+export {default as FixedSideBar} from './SideBar/FixedSideBar';
