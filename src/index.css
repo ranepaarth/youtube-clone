@@ -24,6 +24,10 @@ a {
 /* a:hover {
   color: #c1c1c3;
 } */
+html {
+  overflow: scroll;
+  overflow-y: scroll;
+}
 
 body {
   margin: 0;
@@ -31,7 +35,10 @@ body {
   box-sizing: border-box;
   min-width: 320px;
   min-height: 100vh;
+  overflow: scroll !important;
 }
+
+
 
 h1 {
   font-size: 3.2em;
@@ -63,22 +70,22 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: rgb(114,113,112);
+  background-color: rgb(123, 120, 120);
   border-radius: 10px;
-  height: 200px;
+  height: 2000px;
 }
 
-.tabs-box{
+#tabs-box{
   display: flex;
   gap: 12px;
   list-style: none;
   overflow-x: hidden;
 }
 
-.tabs-box::-webkit-scrollbar{
-  display: none;
-}
 
+/* .sidebar::-webkit-scrollbar{
+  display: ;
+} */
 
 /* .tabs-box .tab{
   color: #ffffff;
