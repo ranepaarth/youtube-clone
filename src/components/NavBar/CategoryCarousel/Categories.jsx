@@ -20,12 +20,12 @@ const Categories = () => {
       : setRightVisible(false);
   };
   const moveRight = () => {
-    navRef ? (navRef.current.scrollLeft += 320) : null;
+    navRef.current.scrollLeft += 320
     setTimeout(() => IconVisibility(), 30);
   };
 
   const moveLeft = () => {
-    navRef ? (navRef.current.scrollLeft -= 320) : null;
+    navRef.current.scrollLeft -= 320
     setTimeout(() => IconVisibility(), 30);
   };
 
@@ -35,9 +35,7 @@ const Categories = () => {
       ? setRightVisible(true)
       : setRightVisible(false);
 
-    navRef.current.scrollableWidth >= window.innerWidth
-      ? ""
-      : setLeftVisible(false);
+    if(navRef.current.scrollableWidth >= window.innerWidth) setLeftVisible(false);
   };
   window.onresize = function () {
     navRef.current.scrollWidth > navRef.clientWidth ||
@@ -45,9 +43,7 @@ const Categories = () => {
       ? setRightVisible(true)
       : setRightVisible(false);
 
-    navRef.current.scrollableWidth >= window.innerWidth
-      ? ""
-      : setLeftVisible(false);
+    if(navRef.current.scrollableWidth >= window.innerWidth) setLeftVisible(false);
 
     let scrollLeftValue = Math.round(navRef.current.scrollLeft);
 
