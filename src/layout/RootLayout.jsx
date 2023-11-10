@@ -1,20 +1,34 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import { Navbar, SideBarContainer, useAppContext } from "../components/routes";
+import React, { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import {
+  Categories,
+  FixedSideBar,
+  Navbar,
+  SideBarContainer,
+  useAppContext,
+} from "../components/routes";
 
 import LoadingBar from "react-top-loading-bar";
 
 const RootLayout = () => {
-  const {open,progress,setProgress} = useAppContext()
+  const { open, progress, setProgress } = useAppContext();
+  const {pathname} = useLocation();
+  console.log(pathname);
   return (
-    <div>
-      <Navbar setProgress={setProgress}/>
-      <LoadingBar color="red" height='2px' progress={progress}/>
-      <div>
-        <SideBarContainer/>
+    <>
+      <div className="fixed top-0 left-0 right-0 bg-[#0a0a0a] select-none">
+        <Navbar setProgress={setProgress} />
+        <FixedSideBar />
       </div>
-      <main>{<Outlet setProgress={setProgress}/>}</main>
-    </div>
+      <LoadingBar color="red" height="2px" progress={progress} />
+      <div>
+        <SideBarContainer />
+      </div>
+      {/* <main className="h-[200vh] mt-32 mx-3 mb-3 md:ml-28 px-6  bg-neutral-800 ">{<Outlet setProgress={setProgress} />}</main> */}
+      {pathname === '/' || pathname === '/video'?<main className="h-[200vh] mt-12 mx-4 my-4 scroll-smooth select-none">
+        {<Outlet setProgress={setProgress} />}
+      </main> : <main className="select-none">{<Outlet/>}</main>}
+    </>
   );
 };
 
