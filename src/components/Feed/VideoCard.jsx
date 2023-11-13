@@ -1,6 +1,5 @@
 import React from "react";
 import { BiCheck } from "react-icons/bi";
-import { HiOutlineDotsVertical } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 import {abbreviateNumber} from 'js-abbreviation-number'
