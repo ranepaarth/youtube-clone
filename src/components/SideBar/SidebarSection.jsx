@@ -21,12 +21,11 @@ const SidebarSection = ({ isXl }) => {
   };
   return (
     <aside
-      className={`bg-[#0a0a0a] w-fit absolute h-full overflow-y-auto lg:block lg:fixed
-      lg:top-14 
-      lg:bottom-0 ${open?"md:absolute md:top-0 md:bottom-0 md:left-0 md:translate-x-[-16px] md:z-20 px-3":""}
-      translate-x-[-269px] lg:translate-x-[-16px] transition-all cursor-pointer`}
+      className={`bg-[#0a0a0a] w-fit fixed top-0 left-0 bottom-0 h-full overflow-y-auto xl:block xl:fixed
+      xl:top-14 xl:bottom-0 ${open?"fixed top-0 bottom-0 left-0 translate-x-[-16px] z-20 px-3 h-screen":""}
+      translate-x-[-300px] xl:translate-x-[-16px] transition-all cursor-pointer`}
     >
-      <span className="lg:hidden block sticky top-0 ml-2">
+      <span className="xl:hidden block sticky top-0 ml-2">
         <AppLogo />
       </span>
       <div className="flex px-5 flex-col">

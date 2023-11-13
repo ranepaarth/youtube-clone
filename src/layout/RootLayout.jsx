@@ -17,7 +17,7 @@ const RootLayout = () => {
     <>
       <div className="fixed top-0 left-0 right-0 bg-[#0a0a0a] select-none z-10">
         <Navbar setProgress={setProgress} />
-        <div className="lg:hidden block">
+        <div className="xl:hidden block">
           <FixedSideBar />
         </div>
       </div>
