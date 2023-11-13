@@ -1,16 +1,17 @@
 import React from "react";
-import { Categories } from "../routes";
+import { Categories, FeedMainSection, SideBarSection } from "../routes";
 
 const Feed = () => {
   return (
-    <section className="grid grid-cols-1 h-[200vh] px-4 py-2 w-full ">
-      <div className="">
-        <div className="fixed top-14 left-0 right-0">
-          <Categories />
-        </div>
-        <div className="md:ml-16 mt-16">feed</div>
+    <>
+      <div className="fixed top-14 left-0 right-0">
+        <Categories />
       </div>
-    </section>
+      <div className={`flex flex-row h-full mt-16 md:mx-0 max-sm:mx-2`}>
+        <SideBarSection />
+        <FeedMainSection />
+      </div>
+    </>
   );
 };
 
