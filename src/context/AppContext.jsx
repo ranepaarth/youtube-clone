@@ -8,8 +8,8 @@ const AppProvider = ({ children }) => {
   const [showSearchDiv, setShowSearchDiv] = useState(false);
   const [progress,setProgress] = useState(0)
   const [loading, setLoading] = useState(false);
-  const [searchResults, setSearchResults] = useState(false);
-  const [selectCategories, setSelectCategories] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [selectCategory, setSelectCategory] = useState(false);
 
   const toggleOpenSidebar = () => {
     setOpen(!open);
@@ -20,15 +20,14 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchSelectedCategoryData(selectCategories);
-  },[selectCategories]);
-
+    fetchSelectedCategoryData(selectCategory);
+  },[selectCategory]);
   const fetchSelectedCategoryData = (query) => {
     setLoading(true);
-    // fetchData(`search/?q=${query}`).then(({contents}) => {
-    //   console.log(contents);
-    //   setSearchResults(contents)
-    // });
+    fetchData(`search/?q=${query}`).then(({contents}) => {
+      console.log(contents);
+      setSearchResults(contents)
+    });
     setLoading(false);
   };
   return (
@@ -43,8 +42,8 @@ const AppProvider = ({ children }) => {
         loading,
         setLoading,
         searchResults,
-        setSelectCategories,
-        selectCategories,
+        setSelectCategory,
+        selectCategory,
         fetchSelectedCategoryData
       }}
     >
