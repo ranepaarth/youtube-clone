@@ -5,7 +5,7 @@ const Hamburger = () => {
     const {toggleOpenSidebar} = useAppContext()
   return (
     <span
-      className="mr-2 text-2xl text-neutral-300 rounded-full p-2 hover:bg-neutral-600"
+      className="mr-2 text-2xl text-neutral-300 rounded-full p-2 hover:bg-neutral-600 lg:hidden md:block"
       onKeyDown={toggleOpenSidebar}
       onClick={toggleOpenSidebar}
     >

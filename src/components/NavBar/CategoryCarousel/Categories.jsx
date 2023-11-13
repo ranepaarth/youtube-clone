@@ -72,11 +72,12 @@ const Categories = () => {
 
   return (
     <div className="">
-      <div className="py-2 px-4 md:ml-20 mb-2 bg-[#0a0a0a]">
+      <div className="py-2 px-4 md:ml-20 lg:ml-52 mb-2 bg-[#0a0a0a]">
         <span
           className={`${
             leftVisible ? "block" : "hidden"
-          } absolute top-0 left-0 md:left-20 bg-gradient-to-r from-[#0a0a0a] from-80% h-12 flex items-center justify-start w-24`}
+          } absolute top-0 left-0 md:left-20
+          lg:ml-32 bg-gradient-to-r from-[#0a0a0a] from-80% h-12 flex items-center justify-start w-24`}
         >
           <p
             className="flex items-center justify-center text-2xl w-16 cursor-pointer"
