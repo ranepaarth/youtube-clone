@@ -5,27 +5,27 @@ import {
   Navbar,
   SideBarContainer,
   useAppContext,
+  LoadingHeader
 } from "../components/routes";
 
 import LoadingBar from "react-top-loading-bar";
 
 const RootLayout = () => {
-  const { open, progress, setProgress } = useAppContext();
+  const { loading, open, progress, setProgress } = useAppContext();
   const { pathname } = useLocation();
-  console.log(pathname);
+  console.log(loading);
   return (
     <>
       <div className="fixed top-0 left-0 right-0 bg-[#0a0a0a] select-none z-10">
-        <Navbar setProgress={setProgress} />
+        {loading ? <LoadingHeader /> : <Navbar setProgress={setProgress} />}
         <div className="xl:hidden block">
-          <FixedSideBar />
+         <FixedSideBar />
         </div>
       </div>
       <LoadingBar color="red" height="2px" progress={progress} />
       <div>
         <SideBarContainer />
       </div>
-      {/* <main className="h-[200vh] mt-32 mx-3 mb-3 md:ml-28 px-6  bg-neutral-800 ">{<Outlet setProgress={setProgress} />}</main> */}
       {pathname === "/" || pathname === "/video" ? (
         <main className="mx-2 scroll-smooth overflow-y-hidden">
           {<Outlet setProgress={setProgress} />}

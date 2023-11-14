@@ -3,9 +3,10 @@ import { AppLogo, SideBarNavItem, useAppContext } from "../routes";
 
 import { useNavigate } from "react-router-dom";
 import { categories } from "./SideBarNav/NavItemList.jsx";
+import LoadingSideBar from "../LoadingSkeleton/LoadingSideBar";
 
 const SidebarSection = ({ isXl }) => {
-  const { open, selectCategory, setSelectCategory } = useAppContext();
+  const { loading,open, selectCategory, setSelectCategory } = useAppContext();
   const navigate = useNavigate();
   const clickHandler = (name, type) => {
     switch (type) {
@@ -19,6 +20,7 @@ const SidebarSection = ({ isXl }) => {
         break;
     }
   };
+  if(loading) return <LoadingSideBar />
   return (
     <aside
       className={`bg-[#0a0a0a] w-fit fixed top-0 left-0 bottom-0 h-full overflow-y-auto xl:block xl:fixed

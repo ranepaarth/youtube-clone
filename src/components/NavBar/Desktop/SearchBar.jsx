@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { BsFillMicFill } from "react-icons/bs";
 const SearchBar = () => {
-  const { toggleSearchBarDiv,fetchSelectedCategoryData } = useAppContext();
+  const { toggleSearchBarDiv,fetchSelectedCategoryData,loading } = useAppContext();
   let [searchQuery,setSearchQuery] = useState('')
   const navigate = useNavigate()
 
@@ -25,14 +25,14 @@ const SearchBar = () => {
         onClick={toggleSearchBarDiv}
         onKeyDown={toggleSearchBarDiv}
       >
-        <IoArrowBackOutline />
+        {loading?'':<IoArrowBackOutline />}
       </span>
       <div className="group flex items-center">
         <span className="rounded-l-full flex items-center" onSubmit={() => {}}>
           <input
             type="text"
             placeholder="Search"
-            className="bg-transparent pl-4 pb-[0.2rem] border border-neutral-600 rounded-l-full overflow-visible h-10 w-[50vw] md:w-[30vw] outline-none focus:border-blue-500"
+            className="bg-transparent pl-4 pb-[0.2rem] border border-neutral-600 rounded-l-full overflow-visible h-10 md:w-[30vw] lg:w-[45vw]  outline-none focus:border-blue-500"
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyUp={searchQueryHandler}
             value={searchQuery}
@@ -47,7 +47,7 @@ const SearchBar = () => {
         </button>
       </div>
       <span className="text-xl p-2 hover:bg-neutral-600 rounded-full cursor-pointer md:hidden block">
-        <BsFillMicFill />
+        {loading?'':<BsFillMicFill />}
       </span>
     </div>
   );

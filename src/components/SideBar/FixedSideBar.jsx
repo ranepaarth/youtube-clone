@@ -1,10 +1,13 @@
 import React from 'react'
 
 import {BiSolidVideos,GoHomeFill,MdOutlineSubscriptions} from '../Icons/Icons'
+import { useAppContext } from '../routes'
 
 const FixedSideBar = () => {
+  const {loading} = useAppContext()
   return (
-    <div className="w-20 h-fit bg-[#0a0a0a] fixed top-16 hidden md:block">
+    <div className="w-20 h-64 bg-[#0a0a0a] fixed hidden md:block">
+      {loading?"":
           <span className="flex flex-col justify-around h-full items-center text-xs cursor-pointer tracking-tighter">
             <span className="flex flex-col items-center justify-center gap-2 my-2 mx-2 py-4 hover:bg-neutral-800 w-[80%] rounded-lg">
               <p className="text-2xl"><GoHomeFill /></p>
@@ -19,6 +22,7 @@ const FixedSideBar = () => {
               <p>You</p>
             </span>
           </span>
+          }
         </div>
   )
 }

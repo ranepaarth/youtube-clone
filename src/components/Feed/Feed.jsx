@@ -1,7 +1,10 @@
 import React from "react";
-import { Categories, FeedMainSection, SideBarSection } from "../routes";
+import { Categories, FeedMainSection, SideBarSection, useAppContext } from "../routes";
+import LoadingFeed from "../LoadingSkeleton/LoadingFeed";
 
 const Feed = () => {
+  const {loading}  = useAppContext()
+  if(loading) return <LoadingFeed />
   return (
     <>
       <div className="fixed top-14 left-0 right-0">
