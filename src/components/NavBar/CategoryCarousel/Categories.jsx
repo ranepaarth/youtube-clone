@@ -11,8 +11,8 @@ const Categories = () => {
     let scrollableWidth =
       navRef.current.scrollWidth - navRef.current.clientWidth;
 
-    console.log("1", scrollLeftValue);
-    console.log("2", scrollableWidth);
+    // console.log("1", scrollLeftValue);
+    // console.log("2", scrollableWidth);
 
     scrollLeftValue > 0 ? setLeftVisible(true) : setLeftVisible(false);
     scrollableWidth > scrollLeftValue
@@ -69,7 +69,7 @@ const Categories = () => {
 
   navRef?.current?.addEventListener("mousedown", () => {
     activeDrag = true;
-    console.log("mousedown");
+    // console.log("mousedown");
   });
 
   return (

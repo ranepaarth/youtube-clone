@@ -5,7 +5,7 @@ import { AppLogo, SearchBar, useAppContext } from "../../routes";
 
 const MobileNav = () => {
   const { toggleSearchBarDiv,showSearchDiv } = useAppContext();
-  console.log(toggleSearchBarDiv)
+  // console.log(toggleSearchBarDiv)
   return (
     <>
       {showSearchDiv ? (
