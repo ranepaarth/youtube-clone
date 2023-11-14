@@ -20,12 +20,12 @@ const Categories = () => {
       : setRightVisible(false);
   };
   const moveRight = () => {
-    navRef.current.scrollLeft += 320
+    navRef.current.scrollLeft += 320;
     setTimeout(() => IconVisibility(), 30);
   };
 
   const moveLeft = () => {
-    navRef.current.scrollLeft -= 320
+    navRef.current.scrollLeft -= 320;
     setTimeout(() => IconVisibility(), 30);
   };
 
@@ -35,7 +35,8 @@ const Categories = () => {
       ? setRightVisible(true)
       : setRightVisible(false);
 
-    if(navRef.current.scrollableWidth >= window.innerWidth) setLeftVisible(false);
+    if (navRef.current.scrollableWidth >= window.innerWidth)
+      setLeftVisible(false);
   };
   window.onresize = function () {
     navRef.current.scrollWidth > navRef.clientWidth ||
@@ -43,7 +44,8 @@ const Categories = () => {
       ? setRightVisible(true)
       : setRightVisible(false);
 
-    if(navRef.current.scrollableWidth >= window.innerWidth) setLeftVisible(false);
+    if (navRef.current.scrollableWidth >= window.innerWidth)
+      setLeftVisible(false);
 
     let scrollLeftValue = Math.round(navRef.current.scrollLeft);
 
@@ -72,12 +74,12 @@ const Categories = () => {
 
   return (
     <div className="">
-      <div className="py-2 px-4 md:ml-20 lg:ml-52 mb-2 bg-[#0a0a0a]">
+      <div className="py-2 px-4 md:ml-20 xl:ml-52 mb-2 bg-[#0a0a0a]">
         <span
           className={`${
             leftVisible ? "block" : "hidden"
           } absolute top-0 left-0 md:left-20
-          lg:ml-32 bg-gradient-to-r from-[#0a0a0a] from-80% h-12 flex items-center justify-start w-24`}
+          xl:ml-36 bg-gradient-to-r from-[#0a0a0a] from-80% h-12 flex items-center justify-start w-24`}
         >
           <p
             className="flex items-center justify-center text-2xl w-16 cursor-pointer"
@@ -87,9 +89,10 @@ const Categories = () => {
             <IoIosArrowBack className="p-3 text-5xl hover:bg-neutral-700 hover:rounded-full" />
           </p>
         </span>
-        <div className="cursor-pointer items-center select-none overflow-hidden">
+        <div className="cursor-pointer items-center select-none overflow-hidden ml-0">
           <span
-            className="flex gap-3 overflow-x-scroll [transition-duration:500ms] scroll-smooth "
+            className="flex gap-3 
+          overflow-x-scroll [transition-duration:500ms] scroll-smooth md:ml-0"
             ref={navRef}
             id="tabs-box"
           >
