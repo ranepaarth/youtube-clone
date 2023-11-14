@@ -2,9 +2,13 @@ import React from 'react'
 
 import {BiSolidVideos,GoHomeFill,MdOutlineSubscriptions} from '../Icons/Icons'
 import { useAppContext } from '../routes'
+import { useLocation } from 'react-router-dom'
 
 const FixedSideBar = () => {
   const {loading} = useAppContext()
+  const {pathname} = useLocation()
+  console.log(pathname)
+  if(pathname !== '/') return ""
   return (
     <div className="w-20 h-64 bg-[#0a0a0a] fixed hidden md:block">
       {loading?"":
