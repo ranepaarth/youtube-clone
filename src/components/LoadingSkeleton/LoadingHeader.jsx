@@ -1,10 +1,13 @@
 import React from "react";
 import { FiMenu } from "react-icons/fi";
+import { useLocation } from "react-router-dom";
 import { SearchBar } from "../routes";
 const LoadingHeader = () => {
+  const { pathname } = useLocation();
+
   return (
     <>
-      <nav className="min-w-full flex items-center justify-between px-2 py-2">
+      <nav className="min-w-full flex items-center justify-between px-2">
         <span className="px-2 text-2xl cursor-pointer">
           <FiMenu />
         </span>
@@ -17,9 +20,16 @@ const LoadingHeader = () => {
           <p className="p-4 rounded-full bg-neutral-600 cursor-pointer animate-pulse"></p>
         </span>
       </nav>
-      <hr className="border-white/[0.15]" />
-      <div className="w-full h-14"></div>
-      <hr className="border-white/[0.15]" />
+
+      {pathname !== "/" ? (
+        ""
+      ) : (
+        <>
+          <hr className="border-white/[0.15]" />
+          <div className="w-full h-14"></div>
+          <hr className="border-white/[0.15]" />
+        </>
+      )}
     </>
   );
 };
