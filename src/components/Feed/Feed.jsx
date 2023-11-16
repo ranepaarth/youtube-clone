@@ -7,7 +7,7 @@ const Feed = () => {
   if(loading) return <LoadingFeed />
   return (
     <>
-      <div className="fixed top-12 md:top-14 left-0 right-0">
+      <div className="fixed top-12 md:top-14 left-0 right-0 z-10">
         <Categories />
       </div>
       <div className={`flex flex-row h-full mt-16 md:mx-0 max-sm:mx-2`}>

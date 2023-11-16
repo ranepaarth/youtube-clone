@@ -26,7 +26,7 @@ const RootLayout = () => {
       <div>
         <SideBarContainer />
       </div>
-      {pathname === "/" || pathname === "/video" ? (
+      {pathname === "/" ? (
         <main className="mx-2 scroll-smooth overflow-y-hidden">
           {<Outlet setProgress={setProgress} />}
         </main>

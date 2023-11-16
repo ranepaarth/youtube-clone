@@ -3,18 +3,20 @@ import { BiCheck } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 import {abbreviateNumber} from 'js-abbreviation-number'
+import VideoLength from "./VideoLength";
 
 const VideoCard = ({ video }) => {
   // console.log(video)
   return (
     <article className="flex flex-col  mb-8 gap-3">
       <Link to={`/video/${video?.videoId}`}>
-        <div className="h-fit">
+        <div className="h-fit sticky -z-0">
           <img
             src={video?.thumbnails[0]?.url}
             alt=""
             className="aspect-video w-full rounded-xl hover:rounded-none transition-all [transition-duration:400ms] p-[0.02rem] hover:p-0"
           />
+          <VideoLength lengthSeconds={video?.lengthSeconds}/>
         </div>
         <div className="flex items-start gap-3 mt-3">
           <span className="flex items-center h-10 w-10 overflow-hidden rounded-full">
