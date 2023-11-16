@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import {SearchBar,AppLogo} from '../../routes'
+import NavItemsRight from "../NavItemsRight";
 
 const DesktopNav = () => {
   return (
@@ -9,11 +10,7 @@ const DesktopNav = () => {
       <span>
         <SearchBar />
       </span>
-      <div className="flex items-center gap-x-8 pr-4">
-        <NavLink to="/">Feed</NavLink>
-        <NavLink to="video/:id">Video</NavLink>
-        <NavLink to="channel/:id">Channel</NavLink>
-      </div>
+      <NavItemsRight />
     </nav>
   );
 };
