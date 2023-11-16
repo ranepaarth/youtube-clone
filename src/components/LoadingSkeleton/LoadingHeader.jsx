@@ -7,7 +7,7 @@ const LoadingHeader = () => {
 
   return (
     <>
-      <nav className="min-w-full flex items-center justify-between px-2">
+      <nav className="min-w-full flex items-center justify-between px-2 pt-2">
         <span className="px-2 text-2xl cursor-pointer">
           <FiMenu />
         </span>
