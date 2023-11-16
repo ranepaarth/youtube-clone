@@ -28,7 +28,7 @@ const AppProvider = ({ children }) => {
       console.log(contents);
       setSearchResults(contents)
     });
-    setLoading(false);
+    setTimeout(()=>setLoading(false),3000)
   };
   return (
     <AppContext.Provider
