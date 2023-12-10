@@ -18,9 +18,6 @@ const RootLayout = () => {
     <>
       <div className="fixed top-0 left-0 right-0 bg-[#0a0a0a] select-none z-10">
         {loading ? <LoadingHeader /> : <Navbar setProgress={setProgress} />}
-        <div className="xl:hidden block">
-          {pathname!== '/'?"":<FixedSideBar />}
-        </div>
       </div>
       <LoadingBar color="red" height="2px" progress={progress} />
       <div>
