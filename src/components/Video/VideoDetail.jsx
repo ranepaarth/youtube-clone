@@ -45,7 +45,7 @@ const VideoDetail = () => {
     .split("\n")
     .filter((item) => item !== " " || item !== "");
   return (
-    <section className="mt-20  flex h-[calc(100%-56px)] justify-center">
+    <section className="mt-20 lg:ml-20 mx-4 flex h-[calc(100%-56px)] justify-center">
       <div className="w-full max-w-[1280px] flex flex-col lg:flex-row lg:items-start bh-neutral-600">
         <div className="flex flex-col gap-3 lg:w-[calc(100%-500px)] xl:w-[calc(100%-400px)]">
           <VideoDetailCard id={id}/>

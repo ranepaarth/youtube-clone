@@ -24,12 +24,9 @@ const SidebarSection = () => {
   if(loading) return <LoadingSideBar />
   return (
     <aside
-      className={`bg-[#0a0a0a] fixed top-0 left-0 bottom-0 w-fit ${open?"z-20 translate-x-[0px]":"-translate-x-[270px]"}  z-10 transition-all xl:top-14 xl:translate-x-[-16px] cursor-pointer`}
+      className={`bg-[#0a0a0a] fixed top-0 left-0 bottom-0 w-fit ${open?"z-20 translate-x-[0px]":"-translate-x-[270px]"}  z-0 transition-all xl:top-14 xl:translate-x-[-16px] cursor-pointer overflow-visible`}
     >
-    {/* w-fit fixed top-0 left-0 bottom-0 h-full overflow-y-auto xl:block xl:fixed
-      xl:top-14 xl:bottom-0 ${open?"fixed top-0 bottom-0 left-0 translate-x-[-16px] z-20 px-3 h-screen":""}
-      translate-x-[-300px] xl:translate-x-[-16px] transition-all cursor-pointer*/}
-      <span className="xl:hidden block sticky top-0 ml-2">
+      <span className="xl:hidden block sticky top-0 ml-2 bg-neutral-950">
         <AppLogo />
       </span>
       <div className="flex px-5 flex-col">
